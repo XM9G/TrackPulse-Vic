@@ -24,5 +24,3 @@ def flightArrivals(icao):
 
     arrivals = api.get_arrivals_by_airport(icao, starttimestamp, current_timestamp)
     return arrivals
-
-print(flightDepartures('YLIL'))

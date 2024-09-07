@@ -836,8 +836,9 @@ async def line_info(ctx, search: str):
 # Train search
 @search.command(name="train", description="Search for a specific Train")
 @app_commands.describe(train="train")
-async def train_line(ctx, train: str):
-    await ctx.response.send_message(f"Searching, trip data may take longer to send...")
+async def train_search(ctx, train: str):
+    await ctx.response.defer()
+    # await ctx.response.send_message(f"Searching, trip data may take longer to send...")
     channel = ctx.channel
     type = trainType(train)
     set = setNumber(train.upper())
@@ -893,7 +894,7 @@ async def train_line(ctx, train: str):
         embed.add_field(name="Source:", value=f'[{getPhotoCredits(train.upper())} (Photo)](https://railway-photos.xm9g.xyz#:~:text={train.upper()}), [MPTG (Icon)](https://melbournesptgallery.weebly.com/melbourne-train-and-tram-fronts.html), [Vicsig (Other info)](https://vicsig.net)', inline=False)
         
         embed.add_field(name='<a:botloading2:1261102206468362381> Loading trip data', value='⠀')
-        embed_update = await channel.send(embed=embed)
+        embed_update = await ctx.edit_original_response(embed=embed)
         
         # map thing
         mapEmbed = discord.Embed(title=f"{train}'s location")
@@ -1034,11 +1035,16 @@ async def transportVicSearch_async(ctx, train, embed, embed_update):
     if isinstance(runs, list):
         print("thing is a list")
         embed.remove_field(3)
-        for i, run in enumerate(runs):
+        # Reverse the order of the runs list
+        for i, run in enumerate(reversed(runs)):
+            print(run)
             if run.startswith('#'):
-                embed.add_field(name=f"Run {i+1}", value=run, inline=False)
+                embed.add_field(name=f"Run", value=run, inline=False)
+                if i>=3:
+                    break
             else:
                 embed.add_field(name='No runs found!', value='⠀')
+
         embed.add_field(name='Data Source', value=f'[View on TransportVic](https://vic.transportsg.me/metro/tracker/consist?consist={train.upper()})')
         await embed_update.edit(embed=embed)
     else:
@@ -1123,6 +1129,7 @@ async def departures(ctx, station: str):
                 at_platform = departure['at_platform']
                 platform_number = departure['platform_number']
                 route_id= departure['route_id'] 
+                note = departure['departure_note']
                 
                 # get info for the run:
                 desto = runs[run_ref]['destination_name']
@@ -1142,7 +1149,7 @@ async def departures(ctx, station: str):
                 
                 #VLINE PLATFORMS DONT WORK PLS HELP
                 
-                embed.add_field(name=f'{getEmojiColor(route_name)} {desto}', value=f"Departing {depTime}\nPlatform {platform_number}\n{route_name} Line\n{trainType} {trainNumber}\nRun `{run_ref}`")
+                embed.add_field(name=f'{getEmojiColor(route_name)} {desto}', value=f"{note if note else ''}\nDeparting {depTime} ({convert_iso_to_unix_time(scheduled_departure_utc,'short-time')})\nPlatform {platform_number}\n{route_name} Line\n{trainType} {trainNumber}\nRun `{run_ref}`")
                 fields = fields + 1
                 if fields == 9:
                     break

@@ -12,7 +12,7 @@ def convert_to_unix_time(date: datetime.datetime) -> str:
     # Convert to unix time
     return f'<t:{int(time.mktime(datetime.datetime(*date_tuple).timetuple()))}:R>'
 
-def convert_iso_to_unix_time(iso_time: str) -> str:
+def convert_iso_to_unix_time(iso_time: str, format=None) -> str:
     # Parse the ISO 8601 formatted time string
     date = datetime.datetime.fromisoformat(iso_time.replace('Z', '+00:00'))
 
@@ -22,5 +22,11 @@ def convert_iso_to_unix_time(iso_time: str) -> str:
     # Convert to Unix time
     unix_time = int(time.mktime(date_local.timetuple()))
 
-    # Format Unix time for Discord's timestamp
-    return f'<t:{unix_time}:R>'
+    if format=='long-time':
+        return f'<t:{unix_time}:T>'
+    elif format=='short-time':
+        return f'<t:{unix_time}:t>'
+    else:
+        # Format Unix time for Discord's timestamp
+        return f'<t:{unix_time}:R>'
+    
