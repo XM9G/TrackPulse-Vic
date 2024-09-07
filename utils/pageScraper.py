@@ -1,3 +1,12 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import queue
+
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -27,14 +36,29 @@ def transportVicSearch(search, tram=False):
 def TRAMtransportVicSearch(search, tram=True):
 	return transportVicSearch(search, tram=tram)
 
-def montagueDays(q):
-	url = f'https://howmanydayssincemontaguestreetbridgehasbeenhit.com/static/js/main.4728b675.chunk.js'
+def montagueDays(queue):
+	service = Service(ChromeDriverManager().install())
+	driver = webdriver.Chrome(service=service)
+
+	url = f'https://howmanydayssincemontaguestreetbridgehasbeenhit.com'
+
+	# Open the URL in the browser
+	driver.get(url)
 
 	try:
-		res = requests.get(url).text
+		# Wait for the page to load
+		driver.implicitly_wait(5)
 
-		days = (datetime.now() - datetime.strptime(res.split('date":"')[1].split('"')[0], "%Y-%m-%d")).days
+		# Find all elements with class
+		elements = driver.find_element_by_class_name('jss25')
 
-		q.put(str(days))
+		if elements:
+			days = elements.text
+			print(days)
+			queue.put(days)
+		else:
+			return("`Error: Number not found`")
 	except Exception as e:
-		return [f'Error: {e}']
+		return(f'Error: {e}')
+	finally:
+		driver.quit()
