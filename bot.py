@@ -6700,6 +6700,7 @@ async def profile(ctx, user: discord.User = None):
 @app_commands.choices(mode=[
         app_commands.Choice(name="Victorian Trains", value="time_based_variants/log_train_map_post_munnel.png"),
         app_commands.Choice(name="Victorian Trains before the Metro Tunnel Big Switch", value="time_based_variants/log_train_map_pre_munnel.png"),
+        app_commands.Choice(name="Adelaide and Journey Beyond Trains", value="log_adelaide-train_map.png"),
         app_commands.Choice(name="Sydney Trains", value="log_sydney-train_map.png"),
         app_commands.Choice(name="NSW Intercity Trains", value="log__sydney-train__map.png"),
         app_commands.Choice(name="NSW Regional and Interstate Trains", value="log___sydney-train___map.png"),
@@ -6734,6 +6735,12 @@ async def viewMaps(ctx, mode: str, no_compression: bool = False):
             pfp = user.avatar.url
             embed.set_author(name="Map by Comeng17", icon_url=pfp)
             await printlog(f"Retrieved future /log train map for {ctx.user.name} in {ctx.channel.mention}")
+        elif mode == "log_adelaide-train_map.png":
+            embed = discord.Embed(title=f"Map of the network covered by </log adelaide-train:1289843416628330506>", color=0xb8b8b8, description="This is a map that is used by a seperate command to show where you have been on the railway network.")
+            user = await bot.fetch_user(1383350882451587102)
+            pfp = user.avatar.url
+            embed.set_author(name="Map by deadmemes21_00905", icon_url=pfp)
+            await printlog(f"Retrieved Adelaide Trains map for {ctx.user.name} in {ctx.channel.mention}")
         elif mode == "log_sydney-train_map.png":
             embed = discord.Embed(title=f"Map of the network covered by </log sydney-train:1289843416628330506> (Sydney Metropolitan Network only)", color=0xb8b8b8, description="This is a map that is used by a seperate command to show where you have been on the railway network.")
             user = await bot.fetch_user(829535993643794482)
