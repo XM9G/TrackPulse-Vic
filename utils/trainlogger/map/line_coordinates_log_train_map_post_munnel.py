@@ -1218,36 +1218,39 @@ line_coordinates = {
         
         # geelong line
         ('Waurn Ponds','Marshall'):[
-            (-5200 + x_offset, 2550 + y_offset, -4950 + x_offset, 2700 + y_offset), # waurn ponds coords
-            (-5200 + x_offset, 2400 + y_offset, -5100 + x_offset, 2550 + y_offset),
+            (-5200 + x_offset, 2750 + y_offset, -4950 + x_offset, 2900 + y_offset), # waurn ponds coords
+            (-5200 + x_offset, 2600 + y_offset, -5100 + x_offset, 2750 + y_offset),
         ],
         ('Marshall','South Geelong'):[
-            (-5200 + x_offset, 2200 + y_offset, -5100 + x_offset, 2450 + y_offset),
+            (-5200 + x_offset, 2400 + y_offset, -5100 + x_offset, 2650 + y_offset),
         ],
         ('South Geelong', 'Geelong'):[
-            (-5200 + x_offset, 1950 + y_offset, -4950 + x_offset, 2100 + y_offset), # Geelong coords
-            (-5200 + x_offset, 2050 + y_offset, -5100 + x_offset, 2250 + y_offset),
+            (-5200 + x_offset, 2150 + y_offset, -4950 + x_offset, 2300 + y_offset), # Geelong coords
+            (-5200 + x_offset, 2150 + y_offset, -5100 + x_offset, 2450 + y_offset),
         ],
         ('Geelong','North Geelong'):[
-            (-5200 + x_offset, 1800 + y_offset, -5100 + x_offset, 1950 + y_offset),
-            (-5200 + x_offset, 1950 + y_offset, -4950 + x_offset, 2100 + y_offset), # Geelong coords
+            (-5200 + x_offset, 2000 + y_offset, -5100 + x_offset, 2150 + y_offset),
+            (-5200 + x_offset, 2150 + y_offset, -4950 + x_offset, 2300 + y_offset), # Geelong coords
         ],
         ('North Geelong', 'North Shore'):[
-            (-5200 + x_offset, 1600 + y_offset, -5100 + x_offset, 1850 + y_offset),
+            (-5200 + x_offset, 1800 + y_offset, -5100 + x_offset, 2050 + y_offset),
         ],
         ('North Shore','Corio'):[
-            (-5200 + x_offset, 1400 + y_offset, -5100 + x_offset, 1650 + y_offset),
+            (-5200 + x_offset, 1600 + y_offset, -5100 + x_offset, 1850 + y_offset),
         ],
         ('Corio', 'Lara'):[
-            (-5200 + x_offset, 1200 + y_offset, -5100 + x_offset, 1450 + y_offset),
+            (-5200 + x_offset, 1400 + y_offset, -5100 + x_offset, 1650 + y_offset),
         ],
         ('Lara', 'Little River'):[
-            (-5200 + x_offset, 1000 + y_offset, -5100 + x_offset, 1250 + y_offset),
+            (-5200 + x_offset, 1200 + y_offset, -5100 + x_offset, 1450 + y_offset),
         ],
         ('Little River','Wyndham Vale'):[
+            (-5200 + x_offset, 1000 + y_offset, -5100 + x_offset, 1250 + y_offset),
+        ],
+        ('Wyndham Vale','West Tarneit'):[
             (-5200 + x_offset, 800 + y_offset, -5100 + x_offset, 1050 + y_offset),
         ],
-        ('Wyndham Vale','Tarneit'):[
+        ('West Tarneit','Tarneit'):[
             (-5200 + x_offset, 600 + y_offset, -5100 + x_offset, 850 + y_offset),
         ],
         ('Tarneit','Deer Park'): [
@@ -1561,56 +1564,56 @@ line_coordinates = {
 
         # warrnambool line
         ('Warrnambool','Sherwood Park'): [
-            (-5100 + x_offset, 3800 + y_offset, -4950 + x_offset, 4050 + y_offset),
+            (-5100 + x_offset, 4000 + y_offset, -4950 + x_offset, 4250 + y_offset),
         ],
         ('Sherwood Park','Terang'): [
-            (-5100 + x_offset, 3600 + y_offset, -5000 + x_offset, 3850 + y_offset),
+            (-5100 + x_offset, 3800 + y_offset, -5000 + x_offset, 4050 + y_offset),
         ],
         ('Terang','Camperdown'): [ 
-            (-5100 + x_offset, 3400 + y_offset, -5000 + x_offset, 3650 + y_offset),
+            (-5100 + x_offset, 3600 + y_offset, -5000 + x_offset, 3850 + y_offset),
         ],
         ('Camperdown','Colac'): [
-            (-5100 + x_offset, 3200 + y_offset, -5000 + x_offset, 3450 + y_offset),
+            (-5100 + x_offset, 3400 + y_offset, -5000 + x_offset, 3650 + y_offset),
         ],
         ('Colac','Birregurra'): [
-            (-5100 + x_offset, 3000 + y_offset, -5000 + x_offset, 3200 + y_offset),
+            (-5100 + x_offset, 3200 + y_offset, -5000 + x_offset, 3400 + y_offset),
         ],
         ('Birregurra','Winchelsea'): [
-            (-5100 + x_offset, 2800 + y_offset, -5000 + x_offset, 3050 + y_offset),
+            (-5100 + x_offset, 3000 + y_offset, -5000 + x_offset, 3250 + y_offset),
         ],
         ('Winchelsea','Waurn Ponds'): [
-            (-5200 + x_offset, 2550 + y_offset, -4950 + x_offset, 2700 + y_offset), # waurn ponds coords
-            (-5100 + x_offset, 2700 + y_offset, -5000 + x_offset, 2850 + y_offset),
+            (-5200 + x_offset, 2750 + y_offset, -4950 + x_offset, 2900 + y_offset), # waurn ponds coords
+            (-5100 + x_offset, 2900 + y_offset, -5000 + x_offset, 3050 + y_offset),
         ],
         ('Waurn Ponds','Marshall'):[
-            (-5200 + x_offset, 2550 + y_offset, -4950 + x_offset, 2700 + y_offset), # waurn ponds coords
-            (-5100 + x_offset, 2400 + y_offset, -5000 + x_offset, 2550 + y_offset),
+            (-5200 + x_offset, 2750 + y_offset, -4950 + x_offset, 2900 + y_offset), # waurn ponds coords
+            (-5100 + x_offset, 2600 + y_offset, -5000 + x_offset, 2750 + y_offset),
         ],
         ('Marshall','South Geelong'):[
-            (-5100 + x_offset, 2200 + y_offset, -5000 + x_offset, 2450 + y_offset),
+            (-5100 + x_offset, 2400 + y_offset, -5000 + x_offset, 2650 + y_offset),
         ],
         ('South Geelong', 'Geelong'):[
-            (-5200 + x_offset, 1950 + y_offset, -4950 + x_offset, 2100 + y_offset), # Geelong coords
-            (-5100 + x_offset, 2050 + y_offset, -5000 + x_offset, 2250 + y_offset),
+            (-5200 + x_offset, 2150 + y_offset, -4950 + x_offset, 2300 + y_offset), # Geelong coords
+            (-5100 + x_offset, 2250 + y_offset, -5000 + x_offset, 2450 + y_offset),
         ],
         ('Geelong','North Geelong'):[
-            (-5100 + x_offset, 1800 + y_offset, -5000 + x_offset, 1950 + y_offset),
-            (-5200 + x_offset, 1950 + y_offset, -4950 + x_offset, 2100 + y_offset), # Geelong coords
+            (-5100 + x_offset, 2000 + y_offset, -5000 + x_offset, 2150 + y_offset),
+            (-5200 + x_offset, 2150 + y_offset, -4950 + x_offset, 2300 + y_offset), # Geelong coords
         ],
         ('North Geelong', 'North Shore'):[
-            (-5100 + x_offset, 1600 + y_offset, -5000 + x_offset, 1850 + y_offset),
+            (-5100 + x_offset, 1800 + y_offset, -5000 + x_offset, 2050 + y_offset),
         ],
         ('North Shore','Corio'):[
-            (-5100 + x_offset, 1400 + y_offset, -5000 + x_offset, 1650 + y_offset),
+            (-5100 + x_offset, 1600 + y_offset, -5000 + x_offset, 1850 + y_offset),
         ],
         ('Corio', 'Lara'):[
-            (-5100 + x_offset, 1200 + y_offset, -5000 + x_offset, 1450 + y_offset),
+            (-5100 + x_offset, 1400 + y_offset, -5000 + x_offset, 1650 + y_offset),
         ],
         ('Lara', 'Wyndham Vale'):[
-            (-5100 + x_offset, 800 + y_offset, -5000 + x_offset, 1250 + y_offset),
+            (-5100 + x_offset, 1000 + y_offset, -5000 + x_offset, 1450 + y_offset),
         ],
         ('Wyndham Vale','Tarneit'):[
-            (-5100 + x_offset, 600 + y_offset, -5000 + x_offset, 850 + y_offset),
+            (-5100 + x_offset, 600 + y_offset, -5000 + x_offset, 1050 + y_offset),
         ],
         ('Tarneit','Deer Park'): [
             (-5100 + x_offset, 550 + y_offset, -5100 + x_offset, 650 + y_offset),
@@ -1982,16 +1985,16 @@ line_coordinates = {
             (20950 + x_offset, 3050 + y_offset, 21100 + x_offset, 3300 + y_offset),
         ],
         ('Drysdale', 'Suma Park'):[
-            (-4450 + x_offset, 2050 + y_offset, -4200 + x_offset, 2200 + y_offset),
+            (-4450 + x_offset, 2250 + y_offset, -4200 + x_offset, 2400 + y_offset),
         ],
         ('Suma Park', "Laker's Siding"):[
-            (-4250 + x_offset, 2050 + y_offset, -3600 + x_offset, 2150 + y_offset),
+            (-4250 + x_offset, 2250 + y_offset, -3600 + x_offset, 2350 + y_offset),
         ],
         ("Laker's Siding", 'Swan Bay'):[
-            (-3650 + x_offset, 2050 + y_offset, -3000 + x_offset, 2150 + y_offset),
+            (-3650 + x_offset, 2250 + y_offset, -3000 + x_offset, 2350 + y_offset),
         ],
         ('Swan Bay', 'Queenscliff'):[
-            (-3050 + x_offset, 2050 + y_offset, -2750 + x_offset, 2200 + y_offset),
+            (-3050 + x_offset, 2250 + y_offset, -2750 + x_offset, 2400 + y_offset),
         ],
     },
 }

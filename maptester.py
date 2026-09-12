@@ -208,4 +208,4 @@ print(stations)
 print(affected_lines)
 
 map_handler = MapImageHandler(f"utils/trainlogger/map/{mode}", lines_dictionary, x_offset, y_offset, station_coordinates, line_coordinates)
-map_handler.highlight_map(affected_lines, f"cache/test.png", stations)
+map_handler.highlight_map(affected_lines, f"cache/test.png", stations, False)
