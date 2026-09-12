@@ -16,18 +16,24 @@ def is_hexadecimal(s):
          return False
    return True
 
-def addTrain(username, set, date, train_type, line, start, end, note):
+def addTrain(userid, username, set, date, train_type, line, start, end, note):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if set.endswith('-'):
         set = set[:-1]
@@ -60,18 +66,24 @@ def addTrain(username, set, date, train_type, line, start, end, note):
     return id
 
 # Tram version:
-def addTram(username, date, train_number, train_type, line, start, end, notes):
+def addTram(userid, username, date, train_number, train_type, line, start, end, notes):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/tram/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/tram/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -103,18 +115,24 @@ def addTram(username, date, train_number, train_type, line, start, end, notes):
     print(f"Data saved to {filename}")
     return id
 
-def addSydneyTrain(username, date, train_number, train_type, line, start, end):
+def addSydneyTrain(userid, username, date, train_number, train_type, line, start, end):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/sydney-trains/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/sydney-trains/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -146,18 +164,24 @@ def addSydneyTrain(username, date, train_number, train_type, line, start, end):
     print(f"Data saved to {filename}")
     return id
 
-def addBus(username, date, train_number, train_type, line, start, end, operator, notes=None):
+def addBus(userid, username, date, train_number, train_type, line, start, end, operator, notes=None):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/bus/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/bus/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -189,18 +213,24 @@ def addBus(username, date, train_number, train_type, line, start, end, operator,
     print(f"Data saved to {filename}")
     return id
 # B
-def addFlight(username, date, train_number, train_type, line, start, end, operator):
+def addFlight(userid, username, date, train_number, train_type, line, start, end, operator):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/flights/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/flights/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -233,18 +263,24 @@ def addFlight(username, date, train_number, train_type, line, start, end, operat
     return id
 
 
-def addSydneyTram(username, date, train_number, train_type, line, start, end):
+def addSydneyTram(userid, username, date, train_number, train_type, line, start, end):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/sydney-trams/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/sydney-trams/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -276,21 +312,24 @@ def addSydneyTram(username, date, train_number, train_type, line, start, end):
     print(f"Data saved to {filename}")
     return id
 
-def addCanberraTram(username, date, train_number, train_type, line, start, end):
+def addCanberraTram(userid, username, date, train_number, train_type, line, start, end):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/canberra-trams/{username}.csv"
-
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')
-        print(f"File created: {filename}")
+    fileid = f"utils/trainlogger/userdata/canberra-trams/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
-
-    if date.endswith('-'):
-        date = date[:-1]
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
 
     id = None
 
@@ -319,18 +358,24 @@ def addCanberraTram(username, date, train_number, train_type, line, start, end):
     print(f"Data saved to {filename}")
     return id
 
-def addAdelaideTrain(username, date, train_number, train_type, line, start, end):
+def addAdelaideTrain(userid, username, date, train_number, train_type, line, start, end):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/adelaide-trains/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/adelaide-trains/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -362,18 +407,24 @@ def addAdelaideTrain(username, date, train_number, train_type, line, start, end)
     print(f"Data saved to {filename}")
     return id
 
-def addAdelaideTram(username, date, train_number, train_type, line, start, end):
+def addAdelaideTram(userid, username, date, train_number, train_type, line, start, end):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/adelaide-trams/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/adelaide-trams/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -405,18 +456,24 @@ def addAdelaideTram(username, date, train_number, train_type, line, start, end):
     print(f"Data saved to {filename}")
     return id
 
-def addPerthTrain(username, date, train_number, train_type, line, start, end):
+def addPerthTrain(userid, username, date, train_number, train_type, line, start, end):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/perth-trains/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/perth-trains/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -448,18 +505,24 @@ def addPerthTrain(username, date, train_number, train_type, line, start, end):
     print(f"Data saved to {filename}")
     return id
 
-def addFlight(username, date, train_number, train_type, line, start, end, registration):
+def addFlight(userid, username, date, train_number, train_type, line, start, end, registration):
 
     # Create a CSV file named after the username
     filename = f"utils/trainlogger/userdata/flights/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/flights/{userid}.csv"
     
-    if not os.path.exists(filename):
-        # Create the file if it does not exist
-        with open(filename, 'w') as file:
-            file.write('')  
-        print(f"File created: {filename}")
+    if not os.path.exists(fileid):
+        if not os.path.exists(filename):
+            # Create the file if it does not exist
+            with open(fileid, 'w') as file:
+                file.write('')  
+            print(f"File created: {fileid} (belonging to {username})")
+            filename = fileid
+        else:
+            print(f"File already exists: {filename}")
     else:
-        print(f"File already exists: {filename}")
+        print(f"File already exists: {fileid} (belonging to {username})")
+        filename = fileid
     
     if date.endswith('-'):
         date = date[:-1]
@@ -490,10 +553,18 @@ def addFlight(username, date, train_number, train_type, line, start, end, regist
     print(f"Data saved to {filename}")
     return id
 
-def readLogs(username):
+def readLogs(userid, username):
 
 
     filename = f"utils/trainlogger/userdata/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+
     user_data = []
 
     try:
@@ -515,9 +586,17 @@ def readLogs(username):
         print(f"File {filename} not found.")
         return []
  
-def readTramLogs(username):
+def readTramLogs(userid, username):
 
     filename = f"utils/trainlogger/userdata/tram/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/tram/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -539,9 +618,17 @@ def readTramLogs(username):
         print(f"File {filename} not found.")
         return []
 
-def readSydneyTrainLogs(username):
+def readSydneyTrainLogs(userid, username):
 
     filename = f"utils/trainlogger/userdata/sydney-trains/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/sydney-trains/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -563,9 +650,17 @@ def readSydneyTrainLogs(username):
         print(f"File {filename} not found.")
         return []
     
-def readSydneyLightRailLogs(username):
+def readSydneyLightRailLogs(userid,username):
 
     filename = f"utils/trainlogger/userdata/sydney-trams/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/sydney-trams/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -587,9 +682,17 @@ def readSydneyLightRailLogs(username):
         print(f"File {filename} not found.")
         return []
 
-def readBusLogs(username):
+def readBusLogs(userid, username):
 
     filename = f"utils/trainlogger/userdata/bus/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/bus/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -611,9 +714,17 @@ def readBusLogs(username):
         print(f"File {filename} not found.")
         return []
 
-def readFlightlogs(username):
+def readFlightlogs(userid, username):
 
     filename = f"utils/trainlogger/userdata/flights/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/flights/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -635,9 +746,17 @@ def readFlightlogs(username):
         print(f"File {filename} not found.")
         return []
 
-def readAdelaideLogs(username):
+def readAdelaideLogs(userid, username):
 
     filename = f"utils/trainlogger/userdata/adelaide-trains/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/adelaide-trains/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -659,9 +778,17 @@ def readAdelaideLogs(username):
         print(f"File {filename} not found.")
         return []
 
-def readAdelaideTramLogs(username):
+def readAdelaideTramLogs(userid, username):
 
     filename = f"utils/trainlogger/userdata/adelaide-trams/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/adelaide-trams/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -683,9 +810,17 @@ def readAdelaideTramLogs(username):
         print(f"File {filename} not found.")
         return []
     
-def readPerthLogs(username):
+def readPerthLogs(userid, username):
 
     filename = f"utils/trainlogger/userdata/perth-trains/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/perth-trains/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
     user_data = []
 
     try:
@@ -708,12 +843,21 @@ def readPerthLogs(username):
         return []
 
 # use this instead for future
-def universalReadLogs(username, mode):
+def universalReadLogs(userid, username, mode):
 
     if mode == 'train':
         filename = f"utils/trainlogger/userdata/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{userid}.csv"
     else:
         filename = f"utils/trainlogger/userdata/{mode}/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{mode}/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
         
     user_data = []
 
@@ -737,7 +881,7 @@ def universalReadLogs(username, mode):
         return []
 
 # same as one above but only reads the row you put in   
-def readRow(username, logid):
+def readRow(userid, username, logid):
     try:
         os.listdir('utils\\trainlogger\\userdata')
     except FileNotFoundError:
@@ -745,6 +889,14 @@ def readRow(username, logid):
     
 
     filename = f"utils/trainlogger/userdata/{username}.csv"
+    fileid = f"utils/trainlogger/userdata/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
 
     # Open the CSV file and read the data
     with open(filename, 'r', newline='') as file:
@@ -768,7 +920,7 @@ def readRow(username, logid):
                 return row
 
 # same as the other but it works for all modes
-def universalReadRow(username, logid, mode):
+def universalReadRow(userid, username, logid, mode):
     try:
         os.listdir('utils\\trainlogger\\userdata')
     except FileNotFoundError:
@@ -777,8 +929,17 @@ def universalReadRow(username, logid, mode):
 
     if mode == 'train':
         filename = f"utils/trainlogger/userdata/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{userid}.csv"
     else:
         filename = f"utils/trainlogger/userdata/{mode}/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{mode}/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
 
     # Open the CSV file and read the data
     with open(filename, 'r', newline='') as file:
@@ -801,12 +962,21 @@ def universalReadRow(username, logid, mode):
             else:
                 return row
         
-def deleteRow(username, logid, mode):
+def deleteRow(userid, username, logid, mode):
 
     if mode == 'train':
         filename = f"utils/trainlogger/userdata/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{userid}.csv"
     else:
         filename = f"utils/trainlogger/userdata/{mode}/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{mode}/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
         
     # Open the CSV file and read the data
     with open(filename, 'r+', newline='') as file:
@@ -826,11 +996,20 @@ def deleteRow(username, logid, mode):
                 
         return id
     
-def editRow(username, logid, mode, line:str='nochange', number:str='nochange', start:str='nochange', end:str='nochange', date:str='nochange', traintype:str='auto', notes:str='nochange'):
+def editRow(userid, username, logid, mode, line:str='nochange', number:str='nochange', start:str='nochange', end:str='nochange', date:str='nochange', traintype:str='auto', notes:str='nochange'):
     if mode == 'train':
         filename = f"utils/trainlogger/userdata/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{userid}.csv"
     else:
         filename = f"utils/trainlogger/userdata/{mode}/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{mode}/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
 
     # Open the CSV file and read the data
     with open(filename, 'r+', newline='') as file:
@@ -875,11 +1054,20 @@ def editRow(username, logid, mode, line:str='nochange', number:str='nochange', s
         
         return 'invalid id did not show up'
     
-def editRowBus(username, logid, mode, line:str='nochange', number:str='nochange', start:str='nochange', end:str='nochange', date:str='nochange', traintype:str='auto',operator:str='nochange', notes:str='nochange'):
+def editRowBus(userid, username, logid, mode, line:str='nochange', number:str='nochange', start:str='nochange', end:str='nochange', date:str='nochange', traintype:str='auto',operator:str='nochange', notes:str='nochange'):
     if mode == 'train':
         filename = f"utils/trainlogger/userdata/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{userid}.csv"
     else:
         filename = f"utils/trainlogger/userdata/{mode}/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{mode}/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filename}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filename = fileid
+    
 
     # Open the CSV file and read the data
     with open(filename, 'r+', newline='') as file:

@@ -203,7 +203,7 @@ async def searchTrainCommand(ctx, train: str, hide_run_info:bool=False, metro_co
                     liverydisplay = discord.ui.TextDisplay(f'**Livery:** {information[1]}')
                     
             
-                fPath = f'utils/trainlogger/userdata/{ctx.user.name}.csv'
+                fPath = f'utils/trainlogger/userdata/{ctx.user.id}.csv'
                 result, log_ids = checkTrainRidden(set, fPath)
                 if result:
                     log_ids_str = ', '.join([f'`{id}`' for id in log_ids])

@@ -15,6 +15,27 @@ async def search(bus, ctx):
     if bus[0] == "D":
         buss = bus[1:]
         data = getfleetsnumber(buss, "Dysons")
+    elif bus[:2] == "SK":
+        buss = bus[2:]
+        data = getfleetsnumber(buss, "Skybus")
+    elif bus[:2] == "TS":
+        buss = bus[2:]
+        data = getfleetsnumber(buss, "Transit Systems")
+    elif bus[:2] == "MK":
+        buss = bus[2:]
+        data = getfleetsnumber(buss, "McKenzies")
+    elif bus[:2] == "CH":
+        buss = bus[2:]
+        data = getfleetsnumber(buss, "Christians")
+    elif bus[:2] == "CR":
+        buss = bus[2:]
+        data = getfleetsnumber(buss, "Cranbourne")
+    elif bus[0] == "S":
+        buss = bus[1:]
+        data = getfleetsnumber(buss, "Sunbury")
+    elif bus[:2] == "MT":
+        buss = bus[2:]
+        data = getfleetsnumber(buss, "Martyrs")
     elif bus[0] == "V":
         buss = bus[1:]
         data = getfleetsnumber(buss, "Ventura")
@@ -24,15 +45,6 @@ async def search(bus, ctx):
     elif bus[0] == "C":
         buss = bus[1:]
         data = getfleetsnumber(buss, "CDC")
-    elif bus[0] == "S":
-        buss = bus[1:]
-        data = getfleetsnumber(buss, "Skybus")
-    elif bus[:2] == "TS":
-        buss = bus[2:]
-        data = getfleetsnumber(buss, "Transit Systems")
-    elif bus[:2] == "MK":
-        buss = bus[2:]
-        data = getfleetsnumber(buss, "McKenzies")
     elif len(bus) == 6:
         data = getfleets(bus)
     else:
@@ -56,6 +68,14 @@ async def search(bus, ctx):
         embed=discord.Embed(title=f"{data[0]} ({data[1]})", color=discord.Color.red())
     elif data[2] == 'McKenzies':
         embed=discord.Embed(title=f"{data[0]} ({data[1]})", color=0x47A04E)
+    elif data[2] == 'Christians':
+        embed=discord.Embed(title=f"{data[0]} ({data[1]})", color=0x1464cc)
+    elif data[2] == 'Cranbourne':
+        embed=discord.Embed(title=f"{data[0]} ({data[1]})", color=0x2a2880)
+    elif data[2] == 'Sunbury':
+        embed=discord.Embed(title=f"{data[0]} ({data[1]})", color=0xD9001B)
+    elif data[2] == 'Martyrs':
+        embed=discord.Embed(title=f"{data[0]} ({data[1]})", color=0x006cb7)
     else:
         embed=discord.Embed(title=f"{data[0]} ({data[1]})", color=discord.Color.light_gray())
     embed.add_field(name="Depot", value=data[7], inline=True)

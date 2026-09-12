@@ -5,10 +5,19 @@ from utils.xmltest import convertLogsToXML
 
 async def logExport(ctx, format:str, mode:str, hidemessage:bool=False):
     username = ctx.user.name
+    userid = ctx.user.id
     if mode == 'train':
-        filepath = f'utils/trainlogger/userdata/{username}.csv'
+        filepath = f"utils/trainlogger/userdata/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{userid}.csv"
     else:
-        filepath = f'utils/trainlogger/userdata/{mode}/{username}.csv'
+        filepath = f"utils/trainlogger/userdata/{mode}/{username}.csv"
+        fileid = f"utils/trainlogger/userdata/{mode}/{userid}.csv"
+    
+    if not os.path.exists(fileid):
+        print(f"userid doesn't exist, using username: {filepath}")
+    else:
+        print(f"userid does exist, using userid: {fileid} (belonging to {username})")
+        filepath = fileid
     
     if not os.path.exists(filepath):
         raise FileNotFoundError(f"No {mode} logs found for {username}")
