@@ -455,6 +455,11 @@ def logMap(user:str, lines_dictionary:dict, mode:str='time_based_variants/log_tr
             # Only process if year is 0 (all years) or matches the specified year and line is all line or matches the specified line
             if (year == 0 or trip_year == year) and (line_choice == 'All' or trip_line == line_choice) and (trainType == 'all' or (trainType == 'Other' and trip_train not in ['Alstom Comeng', 'EDI Comeng', "X'Trapolis 100", "Siemens Nexas", "VLocity", 'Sprinter', 'N Class', 'HCMT', "X'Trapolis 2.0"]) or trip_train == trainType):
                 station1, station2 = cols[5], cols[6]
+                # McKinnon correction
+                if station1 == "Mckinnon":
+                    station1 = "McKinnon"
+                if station2 == "Mckinnon":
+                    station2 = "McKinnon"
                 if station1 not in stations:
                     stations.append(station1)
                 if station2 not in stations:
@@ -477,6 +482,10 @@ def logMap(user:str, lines_dictionary:dict, mode:str='time_based_variants/log_tr
                     start, end, group = cols[5], cols[6], cols[4]
                     start = start.replace('*','')
                     end = end.replace('*','')
+
+                    # McKinnon correction
+                    if start == "Mckinnon":
+                        start = "McKinnon"
 
                     # Find the line that contains these stations
                     if group in ['Alamein', 'Belgrave', 'Craigieburn', 'Cranbourne', 'Glen Waverley', 'Mernda', 'Hurstbridge', 'Lilydale', 'Pakenham', 'Sunbury', 'Upfield'] and cols[5] in ['Flinders Street','Southern Cross','Flagstaff','Parliament','Melbourne Central']:
@@ -604,6 +613,11 @@ def logMap(user:str, lines_dictionary:dict, mode:str='time_based_variants/log_tr
             # Only process if year is 0 (all years) or matches the specified year and line is all line or matches the specified line
             if (year == 0 or trip_year == year) and (line_choice == 'All' or trip_line == line_choice) and (trainType == 'all' or trainType == trip_train):
                 station1, station2 = cols[5], cols[6]
+                # McKinnon correction
+                if station1 == "Mckinnon":
+                    station1 = "McKinnon"
+                if station2 == "Mckinnon":
+                    station2 = "McKinnon"
                 if station1 not in stations:
                     stations.append(station1)
                 if station2 not in stations:
@@ -626,6 +640,10 @@ def logMap(user:str, lines_dictionary:dict, mode:str='time_based_variants/log_tr
                     start, end, group = cols[5], cols[6], cols[4]
                     start = start.replace('*','')
                     end = end.replace('*','')
+
+                    # McKinnon correction
+                    if start == "Mckinnon":
+                        start = "McKinnon"
 
                     # Find the line that contains these stations
                     if group in ['Alamein', 'Belgrave', 'Craigieburn', 'Frankston', 'Glen Waverley', 'Mernda', 'Hurstbridge', 'Lilydale', 'Sunbury', 'Upfield'] and cols[5] in ['Flinders Street','Southern Cross','Flagstaff','Parliament','Melbourne Central']:
